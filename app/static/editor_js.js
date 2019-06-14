@@ -46,7 +46,6 @@ $(document).ready(function(){
         ball_update(data['msg'][0]);
             });
     socket_local.on('gameover', function(data){ 
-        console.log("gameover data.msg",data.msg.record_content)
         myPopupjs(data.msg,data.log_id);
         record_content=data.msg.record_content
         display=data.msg.record_content
@@ -103,9 +102,9 @@ function replay(){
     },replay_speed);
 }
 function download_log(){
-    let ball="BALL";
-    let p1="P1";
-    let p1_move="PMOVE";
+    let ball="BALL:";
+    let p1="P1:";
+    let p1_move="PMOVE:";
     for (var i = 0; i < record_content.length; i++) { 
         ball +=  record_content[i][0]+"''";
         p1 +=  record_content[i][1]+"''";
@@ -300,11 +299,13 @@ function before_sendback(Data,content_type,post_dest){
 
 function myPopupjs(data_msg,log_id){
 
-    console.log('msg type parse:'+typeof(JSON.parse(data_msg.l_report)))
     var mytable = "<table class=\"popuptext\" ><tbody><tr>" ;
     var l_data = JSON.parse(data_msg.l_report)
     var r_data = {'user_id':1,'score':0,'cpu':'50','mem':'30','time':'554400'}
-    
+    l_data['cpu']=l_data['cpu']+"%"
+    l_data['mem']=l_data['mem']+"%"
+    l_data['max_val'][0]=l_data['max_val'][0]+"%"
+    l_data['max_val'][1]=l_data['max_val'][1]+"%"
     mytable += "</tr><tr><td></td><td>SCORE</td></tr><tr>";
     mytable += "</tr><tr><td></td><td>P1</td><td>P2</td></tr><tr>";
 
