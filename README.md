@@ -9,5 +9,5 @@
 1. `source ./venv/bin/activate`( `cd venv\Scripts;activate` on Windows )
 3. `pip install --upgrade pip`
 4. `pip install -r requirement.txt`
-6. `export FLASK_APP=localapp.py`
+6. `export FLASK_APP=localapp.py`( `set FLASK_APP=localapp.py` on Windows )
 5. `flask run -p 5500` and Running on http://127.0.0.1:5000/
