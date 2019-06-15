@@ -230,7 +230,7 @@ def test_code(compiler,save_path,filename,file_end):
             p = Popen(compiler + ' '+save_path + 'test_usercode'+file_end,shell=True, stdout=PIPE, stderr=PIPE,close_fds=True)
             stdout, stderr = p.communicate()
         elif file_end=='.py':
-            p = Popen(compiler + ' '+save_path + 'test_usercode'+file_end+' 0.0.0.0 8800 1',shell=True, stdout=PIPE, stderr=PIPE,close_fds=True)
+            p = Popen(compiler + ' '+save_path + 'test_usercode'+file_end+' 127.0.0.1 8800 1',shell=True, stdout=PIPE, stderr=PIPE,close_fds=True)
             stdout, stderr = p.communicate()
         if stderr:
             print('stderr:', p.returncode,stderr)
