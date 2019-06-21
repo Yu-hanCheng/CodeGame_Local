@@ -27,8 +27,8 @@
             <div class ="code_space">
                 <select id="Game" class="form-control"onChange="changeGame()">
                     <option>choose game name</option>
-                    {% for gameId,gameName,gameDescript in glist[0] %}
-                    <option value={{gameId}}>{{ gameName }}({{ gameDescript }})</option>
+                    {% for gameId,game_name,gameDescript in glist[0] %}
+                    <option value={{gameId}}>{{ game_name }}({{ gameDescript }})</option>
                     {% endfor %}
                 </select>
                 <select id="mode" class="form-control"onChange="changeMode()">
