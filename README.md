@@ -3,7 +3,7 @@
 2. `pip3 install virtualenv` or refer to [here](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
 3. `virtualenv venv` build a virtual environment
 
-# Install Localapp test server
+# Install Local Test Server
 1. `git clone https://github.com/Yu-hanCheng/CodeGame_Local.git`
 2. `cd CodeGame_Local`
 1. `source ./venv/bin/activate`( `cd venv\Scripts;activate` on Windows )
@@ -13,7 +13,7 @@
 5. `flask run -p 5500` and Running on http://127.0.0.1:5000/
 
 
-* About ML code 
+# About ML code 
 1. Training data can be log of rank_list or your test result
 2. Example code
 ```
